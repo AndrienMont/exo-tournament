@@ -1,31 +1,26 @@
 package me.guillaume.recruitment.tournament;
 
-public class Viking {
-    private int hitPoints;
-    private int dmg;
+public class Viking extends Duellist{
 
     public Viking(){
-        this.hitPoints = 120;
-        this.dmg = 6;
+        hitPoints = 120;
+        dmg = 6;
+        weapon = "axe";
     }
 
-    public int hitPoints(){
-        return this.hitPoints;
-    }
-
-    public void engage(Swordsman s){
-        s.takeDmg(dmg);
-        if(s.hitPoints() > 0){
-            s.engage(this);
+    @Override
+    public void engage(Duellist d) {
+        d.takeDmg(dmg,weapon);
+        if(d.hitPoints() > 0){
+            d.engage(this);
         }
     }
 
-    public void takeDmg(int val){
-        if(hitPoints < val){
-            hitPoints = 0;
-        }else{
-            this.hitPoints -= val;
+    @Override
+    public Viking equip(String equipment) {
+        if(equipment.equals("buckler")){
+            shield = new Buckler();
         }
-
+        return this;
     }
 }
