@@ -18,9 +18,7 @@ public class Swordsman extends Duellist{
 
     @Override
     public Swordsman equip(String equipment) {
-        if(equipment.equals("buckler")){
-            shield = new Buckler();
-        }
+        gearUp(equipment);
         return this;
     }
 

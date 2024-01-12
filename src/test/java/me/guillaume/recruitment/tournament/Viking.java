@@ -18,9 +18,7 @@ public class Viking extends Duellist{
 
     @Override
     public Viking equip(String equipment) {
-        if(equipment.equals("buckler")){
-            shield = new Buckler();
-        }
+        gearUp(equipment);
         return this;
     }
 }

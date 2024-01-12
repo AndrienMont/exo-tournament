@@ -59,21 +59,21 @@ public class TournamentTest {
      * a Great Sword is a two handed sword deliver 12 damages, but can attack only 2 every 3
      * an armor : reduce all received damages by 3 & reduce delivered damages by one
      */
-//    @Test
-//    public void ArmoredSwordsmanVsViking() {
-//
-//        Highlander highlander = new Highlander();
-//
-//        Swordsman swordsman = new Swordsman()
-//                .equip("buckler")
-//                .equip("armor");
-//
-//        swordsman.engage(highlander);
-//
-//        assertThat(swordsman.hitPoints()).isEqualTo(0);
-//        assertThat(highlander.hitPoints()).isEqualTo(10);
-//
-//    }
+    @Test
+    public void ArmoredSwordsmanVsViking() {
+
+        Highlander highlander = new Highlander();
+
+        Swordsman swordsman = new Swordsman()
+                .equip("buckler")
+                .equip("armor");
+
+        swordsman.engage(highlander);
+
+        assertThat(swordsman.hitPoints()).isEqualTo(0);
+        assertThat(highlander.hitPoints()).isEqualTo(10);
+
+    }
 
     /**
      * a vicious Swordsman is a Swordsman that put poison on his weapon.
